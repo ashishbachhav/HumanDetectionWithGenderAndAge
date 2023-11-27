@@ -121,7 +121,12 @@ while cv.waitKey(1) < 0:
         print("Age Output : {}".format(agePreds))
         print("Age : {}, conf = {:.3f}".format(age, agePreds[0].max()))
 
-        label = "{},{},{}".format(gender, age, count)
+        size = face.size
+        shape0 = face.shape[0]
+        shape1 = face.shape[1]
+        shape2 = face.shape[2]
+
+        label = "{},{},{},{},{},{},{}".format(gender, age, count,size, shape0, shape1, shape2)
 
         #cursor = cnxn.cursor()
         #cursor.execute("INSERT INTO HumanDetection (PersonId,Gender,Age) values(?,?,?)", count, gender, age)
